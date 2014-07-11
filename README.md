@@ -10,8 +10,8 @@ This downloads the raw Coda CVS repositories (about 11MB) and extracts them to
 a 'coda-mirror' subdirectory.  It will then fix up an unparsable CVS tag.
 
 The following Makefiles convert the respective CVS repository mirrors to Git
-and depend on having [reposurgeon](http://www.catb.org/esr/reposurgeon/)
-installed,
+and depend on having [cvs-fast-export](http://www.catb.org/~esr/cvs-fast-export/)
+and [reposurgeon](http://www.catb.org/esr/reposurgeon/) installed.
 
 ```
 make -f Makefile.lwp
