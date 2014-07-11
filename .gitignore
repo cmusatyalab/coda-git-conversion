@@ -1,0 +1,7 @@
+coda-mirror-*.tar.gz
+coda-mirror/
+*.cvs
+*.fi
+*.fo
+*-git
+*-git.~1~
