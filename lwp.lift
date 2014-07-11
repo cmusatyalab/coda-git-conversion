@@ -1,0 +1,129 @@
+print fix up authors
+;; this is not how author information is updated
+<2004-02-24T11:21:44Z!jaharkes@cs.cmu.edu> setfield author "Greg Troxel <gdt@ir.bbn.com>"
+<2005-01-28T18:41:38Z!jaharkes@cs.cmu.edu> setfield author "Brett Lymn <blymn@baesystems.com.au>"
+<2005-06-27T19:55:27Z!jaharkes@cs.cmu.edu> setfield author "Greg Troxel <gdt@ir.bbn.com>"
+
+print fix up tag names
+tag C401_9Jan1997_15h30m rename coda-4.0.1
+tag C402 rename coda-4.0.2
+tag WB delete
+tag c4_0_8b rename coda-4.0.8
+tag c4_1_0 rename coda-4.1.0
+tag c4_1_1 rename coda-4.1.1
+tag c4_1_2 rename coda-4.1.2
+tag c4_1_3 rename coda-4.1.3
+tag c4_1_3b delete
+tag c4_2_0 rename coda-4.2.0
+tag c4_2_1 rename coda-4.2.1
+tag c4_2_2 rename coda-4.2.2
+tag c4_2_4 rename coda-4.2.4
+tag c4_3_1 rename coda-4.3.1
+tag c4_3_2 rename coda-4.3.2
+tag c4_3_3 rename coda-4.3.3
+tag c4_3_4 rename coda-4.3.4
+tag c4_3_5 rename coda-4.3.5
+tag c4_3_6 rename coda-4.3.6
+tag c4_3_7 rename coda-4.3.7
+tag c4_3_8 rename coda-4.3.8
+tag c4_3_10 rename coda-4.3.10
+tag c4_3_11 rename coda-4.3.11
+tag c4_3_12 rename coda-4.3.12
+tag c4_3_13 rename coda-4.3.13
+tag c4_3_14 rename coda-4.3.14
+tag c4_4_3 rename coda-4.4.1
+;;tag rvm4_4_1 delete ;; what is this? coda-4.4.1 branches off from an earlier point.
+tag c4_6_0 rename coda-4.6.0
+tag c4_6_0-10 delete
+tag c4_6_1 rename coda-4.6.1
+tag c4_6_2 rename coda-4.6.2
+tag c4_6_3 rename coda-4.6.3-rc1
+tag c4_6_3-2 rename coda-4.6.3
+tag c4_6_4 rename coda-4.6.4-rc1
+tag c4_6_4final rename coda-4.6.4
+tag c4_6_5 rename coda-4.6.5
+tag c4_6_6 move <1998-10-07T20:25:19Z!rvb@cs.cmu.edu>
+tag c4_6_6 rename coda-4.6.6
+tag c4_6_7 rename coda-4.6.7
+tag c4_7_1 rename coda-4.7.1
+tag WITHOUT_SIMULATE delete
+tag WITH_SIMULATE delete
+tag c4_7_4 rename coda-4.7.4
+tag c4_7_5 rename coda-4.7.5
+tag c4_7_6 rename coda-4.7.6
+tag c4_7_7 rename coda-4.7.7
+tag c4_7_8 rename coda-4.7.8
+tag c5_0_0 rename coda-5.0.0
+tag c5_0_p1 rename coda-5.0.0-p1
+tag c5_0_1 rename coda-5.0.1
+tag c5_0_2 rename coda-5.0.2
+tag c5_0_3 rename coda-5.0.3
+tag UMICH_CURRENT_SNAP delete
+tag UMICH_SNAP_1999_04_08 delete
+tag c5_1_1 rename coda-5.1.1
+tag c5_1_2 rename coda-5.1.2
+tag c5_2_0 rename coda-5.2.0
+tag c5_2_1 rename coda-5.2.1
+tag c5_2_2 rename coda-5.2.2
+tag c5_2_3 rename coda-5.2.3
+tag c5_2_4 rename coda-5.2.4
+tag c5_2_5 rename coda-5.2.5
+tag c5_2_6 rename coda-5.2.6
+tag c5_2_7 rename coda-5.2.7
+tag c5_3_0 rename coda-5.3.0
+tag c5_3_1 rename coda-5.3.1
+tag c5_3_2 rename coda-5.3.2
+tag c5_3_3 rename coda-5.3.3
+tag BNOBLE_BRANCH_1999_09_24 delete
+tag UMICH_SNAP_1999_09_24 delete
+tag v1_0 rename lwp-1.0
+tag v1_1 rename lwp-1.1
+tag BNOBLE_BP_2000_01_15 delete
+tag UMICH_SNAP_2000_01_17 delete
+tag v1_2 rename lwp-1.2
+tag v1_3 rename lwp-1.3
+tag v1_4 rename lwp-1.4
+tag v1_5 rename lwp-1.5
+tag v1_6 rename lwp-1.6
+tag v1_7 rename lwp-1.7
+tag v1_8 rename lwp-1.8
+tag v1_9 rename lwp-1.9
+tag v1_10 rename lwp-1.10
+tag v1_11 rename lwp-1.11
+tag v1_12 rename lwp-1.12
+tag v1_13 rename lwp-1.13
+tag v2_0 rename lwp-2.0
+tag v2_1 rename lwp-2.1
+tag v2_2 rename lwp-2.2
+tag v2_3 rename lwp-2.3
+tag v2_4-rc1 rename lwp-2.4-rc1
+tag v2_4 rename lwp-2.4
+tag v2_5-rc1 rename lwp-2.5-rc1
+tag v2_5-rc2 rename lwp-2.5-rc2
+tag v2_5 rename lwp-2.5
+tag v2_6 rename lwp-2.6
+
+print fix up merge points where branches got merged
+<1998-05-02T21:41:38Z!braam@cs.cmu.edu>,<1998-05-07T17:23:13Z!braam@cs.cmu.edu> merge
+<1998-06-24T12:16:08Z!jaharkes@cs.cmu.edu>,<1998-06-24T18:47:54Z!jaharkes@cs.cmu.edu> merge
+<1998-10-27T20:29:01Z!jaharkes@cs.cmu.edu>,<1998-10-28T19:58:10Z!braam@cs.cmu.edu> merge
+<1998-10-07T15:01:31Z!rvb@cs.cmu.edu>,<1998-10-07T20:30:11Z!rvb@cs.cmu.edu> squash --delete
+<1999-01-21T19:56:10Z!jaharkes@cs.cmu.edu>,<1999-01-22T00:10:27Z!jaharkes@cs.cmu.edu> merge
+<1999-02-19T16:43:20Z!rvb@cs.cmu.edu> squash --delete
+<1999-02-25T17:56:50Z!jaharkes@cs.cmu.edu>,<1999-02-28T01:18:06Z!jaharkes@cs.cmu.edu> merge
+
+print clean up branches
+branch WB-branch delete
+branch c4_0_7 delete ;; TAG??
+branch c4_0_8 rename coda-4.0.x ;; TAG??
+branch c4_1_3mach rename coda-4.1.x
+branch b4_2_0 rename coda-4.2.x
+branch c4_4B rename coda-4.4.x
+branch kerberos delete
+branch r4_6 rename coda-4.6.x
+branch b4_6_3 delete
+branch b4_6_4 rename coda-4.6.y
+branch b5_0 rename coda-5.0.x
+branch b5_2 rename coda-5.2.x ;; MERGED?
+branch BNOBLE_WORK_1999_09_24 delete
+branch BNOBLE_WORK_2000_01_15 delete
