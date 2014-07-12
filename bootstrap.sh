@@ -16,6 +16,3 @@ echo "Fixing up broken CVS tags"
 find coda-mirror/coda/utils-src/mond -name \*,v \
     -exec sed -i 's/(SOSP15_CDROM)/_SOSP15-CDROM/' {} \;
 
-ln -s coda-committers.map lwp.map
-ln -s coda-committers.map rpc2.map
-ln -s coda-committers.map rvm.map
