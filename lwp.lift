@@ -1,8 +1,26 @@
-print fix up authors
-;; this is not how author information is updated
-<2004-02-24T11:21:44Z!jaharkes@cs.cmu.edu> setfield author "Greg Troxel <gdt@ir.bbn.com>"
-<2005-01-28T18:41:38Z!jaharkes@cs.cmu.edu> setfield author "Brett Lymn <blymn@baesystems.com.au>"
-<2005-06-27T19:55:27Z!jaharkes@cs.cmu.edu> setfield author "Greg Troxel <gdt@ir.bbn.com>"
+# initial commit for standalone LWP tree
+#<1999-10-26T13:35:45!jaharkes@cs.cmu.edu>
+
+# actual removal from Coda tree
+#<1999-12-06T20:03:34!jaharkes@cs.cmu.edu>
+
+#print fix author information
+#<2000-10-31T12:01:25!jaharkes@cs.cmu.edu> Bruce Guenter
+#<2001-04-09T11:09:29!jaharkes@cs.cmu.edu> Timothy Wood
+#<2001-10-04T17:14:08!jaharkes@cs.cmu.edu> Jeff Bachtel
+#<2004-02-16T16:40:56!jaharkes@cs.cmu.edu> William van Etten
+#<2004-02-24T16:21:44Z!jaharkes@cs.cmu.edu> Greg Troxel <gdt@ir.bbn.com>
+#<2005-01-28T18:41:38Z!jaharkes@cs.cmu.edu> Brett Lymn <blymn@baesystems.com.au>
+#<2005-06-27T19:55:27Z!jaharkes@cs.cmu.edu> Greg Troxel <gdt@ir.bbn.com>
+#<2008-04-22T17:13:04!jaharkes@cs.cmu.edu> Adam Goode <agoode@cs.cmu.edu>
+#    mailbox_out >lwp.authors_needed
+
+## This fails to work because there are no authors when author == committer
+#<2004-02-24T16:21:44Z!jaharkes@cs.cmu.edu> \
+#    filter --regex /.*/Greg Troxel <gdt@ir.bbn.com>/a
+
+## This fails work because reposurgeon doesn't handle Author-Date: correctly
+#mailbox_in <lwp.authors
 
 print fix up tag names
 tag C401_9Jan1997_15h30m rename coda-4.0.1
@@ -32,7 +50,7 @@ tag c4_3_12 rename coda-4.3.12
 tag c4_3_13 rename coda-4.3.13
 tag c4_3_14 rename coda-4.3.14
 tag c4_4_3 rename coda-4.4.1
-;;tag rvm4_4_1 delete ;; what is this? coda-4.4.1 branches off from an earlier point.
+;;tag rvm4_4_1 delete ;; what is this? coda-4.4.1 branches off earlier.
 tag c4_6_0 rename coda-4.6.0
 tag c4_6_0-10 delete
 tag c4_6_1 rename coda-4.6.1
@@ -104,13 +122,25 @@ tag v2_5 rename lwp-2.5
 tag v2_6 rename lwp-2.6
 
 print fix up merge points where branches got merged
-<1998-05-02T21:41:38Z!braam@cs.cmu.edu>,<1998-05-07T17:23:13Z!braam@cs.cmu.edu> merge
-<1998-06-24T12:16:08Z!jaharkes@cs.cmu.edu>,<1998-06-24T18:47:54Z!jaharkes@cs.cmu.edu> merge
-<1998-10-27T20:29:01Z!jaharkes@cs.cmu.edu>,<1998-10-28T19:58:10Z!braam@cs.cmu.edu> merge
-<1998-10-07T15:01:31Z!rvb@cs.cmu.edu>,<1998-10-07T20:30:11Z!rvb@cs.cmu.edu> squash --delete
-<1999-01-21T19:56:10Z!jaharkes@cs.cmu.edu>,<1999-01-22T00:10:27Z!jaharkes@cs.cmu.edu> merge
-<1999-02-19T16:43:20Z!rvb@cs.cmu.edu> squash --delete
-<1999-02-25T17:56:50Z!jaharkes@cs.cmu.edu>,<1999-02-28T01:18:06Z!jaharkes@cs.cmu.edu> merge
+<1998-05-02T21:41:38Z!braam@cs.cmu.edu>,\
+<1998-05-07T17:23:13Z!braam@cs.cmu.edu> merge
+
+<1998-06-24T12:16:08Z!jaharkes@cs.cmu.edu>,\
+<1998-06-24T18:47:54Z!jaharkes@cs.cmu.edu> merge
+
+<1998-10-27T20:29:01Z!jaharkes@cs.cmu.edu>,\
+<1998-10-28T19:58:10Z!braam@cs.cmu.edu> merge
+<1998-10-07T15:01:31Z!rvb@cs.cmu.edu>,\
+<1998-10-07T20:30:11Z!rvb@cs.cmu.edu> squash --delete --quiet
+
+<1999-01-21T19:56:10Z!jaharkes@cs.cmu.edu>,\
+<1999-01-22T00:10:27Z!jaharkes@cs.cmu.edu> merge
+
+<1999-02-19T16:37:33Z!rvb@cs.cmu.edu>,\
+<1999-02-19T16:43:20Z!rvb@cs.cmu.edu> merge
+
+<1999-02-25T17:56:50Z!jaharkes@cs.cmu.edu>,\
+<1999-02-28T01:18:06Z!jaharkes@cs.cmu.edu> merge
 
 print clean up branches
 branch WB-branch delete
@@ -124,6 +154,7 @@ branch r4_6 rename coda-4.6.x
 branch b4_6_3 delete
 branch b4_6_4 rename coda-4.6.y
 branch b5_0 rename coda-5.0.x
-branch b5_2 rename coda-5.2.x ;; MERGED?
+branch b5_2 rename coda-5.2.x
 branch BNOBLE_WORK_1999_09_24 delete
 branch BNOBLE_WORK_2000_01_15 delete
+

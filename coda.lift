@@ -1,0 +1,17 @@
+## Squash earliest history which has an incomplete source tree
+
+### this fails to work, some blobs are not found in the resulting dump
+###
+#branch CMU_1 delete     ;; remove a disconnected branch
+#=P delete               ;; divide fails to color passthroughs
+#<1996-11-22T19:15:07Z!braam@cs.cmu.edu> divide
+#choose coda.cvs-late
+#rename coda.cvs
+#drop coda.cvs-early
+
+### fails to work, mid-branch delete error and a commit not found in dump
+#branch CMU_1 delete
+#branch master-UNNAMED-BRANCH-(null) delete
+#1..<1996-11-22T19:15:07Z!braam@cs.cmu.edu> squash
+
+lint
