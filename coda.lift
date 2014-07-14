@@ -1,5 +1,5 @@
 # delete disconnected and lost commit branches
-branch CMU_1 delete     ;; remove a disconnected branch
+branch CMU_1 delete     ;; remove a branch with a secondary (disconnected) root
 branch master-UNNAMED-BRANCH-(null) delete ;; branch with 'lost' commits
 # at least the rvm_logrecover fix is definitely included in coda-4.6.0
 
@@ -15,6 +15,14 @@ branch master-UNNAMED-BRANCH-(null) delete ;; branch with 'lost' commits
 ### fails to work too, mid-branch delete error and a commit not found in dump
 #1..<1996-11-22T19:15:07Z!braam@cs.cmu.edu> squash
 
+### this seems to do the trick
+branch BNOBLE_WORK_2_6_96 delete
+branch BNOBLE_WORK_6_20_96 delete
+#tag BNOBLE_ALPHA_6_19_96 delete ;; these tags got deleted with branches
+#tag BNOBLE_NTR_OUTPUT_1 delete
+#tag BNOBLE_2TERM_NTRREP delete
+1..<1996-11-13T04:14:20Z!bnoble@cs.cmu.edu> squash --coalesce
+
 # clean up tags
 tag g++_CONVERSION delete
 tag CODA_RELEASE_3-1_SOSP15-CDROM delete
@@ -23,9 +31,6 @@ tag BNOBLE_BP_2_6_96 delete
 tag BNOBLE_PREMERGE_6_20_96 delete
 tag CMU1_1 delete
 tag SATYA_BP_8_8_96 delete
-tag BNOBLE_ALPHA_6_19_96 delete
-tag BNOBLE_NTR_OUTPUT_1 delete
-tag BNOBLE_2TERM_NTRREP delete
 tag BNOBLE_BP_6_20_96 delete
 tag BNOBLE_POSTMERGE_6_20_96 delete
 tag BRAAM_BP_8_13_96 delete
@@ -246,3 +251,23 @@ branch v6_0_x rename coda-6.0.x
 # Modified alphaci to work on all supported platforms
 <1996-12-06T14:08:55Z!raiff@cs.cmu.edu> squash --coalesce
 <1996-12-06T14:23:25Z!raiff@cs.cmu.edu> squash --pushback --coalesce
+
+## Merge branches
+# Lookaside branch merge
+<2003-02-04T22:06:26Z!jaharkes@cs.cmu.edu> squash
+<2003-02-28T17:09:40Z!jaharkes@cs.cmu.edu> squash --pushback
+<2003-03-07T05:48:49Z!jaharkes@cs.cmu.edu> squash --pushback
+<2003-02-27T14:32:13Z!jaharkes@cs.cmu.edu>,<2003-02-28T07:32:35Z!jaharkes@cs.cmu.edu> merge
+# realms branch merge
+<2002-07-15T22:19:43Z!jaharkes@cs.cmu.edu>,\
+<2002-07-15T22:19:44Z!jaharkes@cs.cmu.edu>,\
+<2002-07-23T05:01:02Z!jaharkes@cs.cmu.edu> squash
+<2003-01-08T17:20:57Z!jaharkes@cs.cmu.edu> squash --pushback
+<2002-12-09T20:28:38Z!jaharkes@cs.cmu.edu>,<2003-01-08T17:15:56Z!jaharkes@cs.cmu.edu> merge
+
+
+## switch to /coda/coda.cs.cmu.edu/project/coda/dev/coda.git history between
+#   <2005-07-06T21:15:06Z!jaharkes@cs.cmu.edu> Fixed function typing
+# and
+#   <2005-07-28T20:31:57Z!phil@cs.wwu.edu> Server names have changed for WWU
+
