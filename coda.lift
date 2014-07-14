@@ -1,17 +1,224 @@
-## Squash earliest history which has an incomplete source tree
+# delete disconnected and lost commit branches
+branch CMU_1 delete     ;; remove a disconnected branch
+branch master-UNNAMED-BRANCH-(null) delete ;; branch with 'lost' commits
+# at least the rvm_logrecover fix is definitely included in coda-4.6.0
 
+## Squash earliest history which has an incomplete source tree
 ### this fails to work, some blobs are not found in the resulting dump
 ###
-#branch CMU_1 delete     ;; remove a disconnected branch
 #=P delete               ;; divide fails to color passthroughs
 #<1996-11-22T19:15:07Z!braam@cs.cmu.edu> divide
 #choose coda.cvs-late
 #rename coda.cvs
 #drop coda.cvs-early
 
-### fails to work, mid-branch delete error and a commit not found in dump
-#branch CMU_1 delete
-#branch master-UNNAMED-BRANCH-(null) delete
+### fails to work too, mid-branch delete error and a commit not found in dump
 #1..<1996-11-22T19:15:07Z!braam@cs.cmu.edu> squash
 
-lint
+# clean up tags
+tag g++_CONVERSION delete
+tag CODA_RELEASE_3-1_SOSP15-CDROM delete
+tag BNOBLE_BP_1_21_96 delete
+tag BNOBLE_BP_2_6_96 delete
+tag BNOBLE_PREMERGE_6_20_96 delete
+tag CMU1_1 delete
+tag SATYA_BP_8_8_96 delete
+tag BNOBLE_ALPHA_6_19_96 delete
+tag BNOBLE_NTR_OUTPUT_1 delete
+tag BNOBLE_2TERM_NTRREP delete
+tag BNOBLE_BP_6_20_96 delete
+tag BNOBLE_POSTMERGE_6_20_96 delete
+tag BRAAM_BP_8_13_96 delete
+tag R1_2 delete
+tag PREMERGE_BNOBLE_6_20_96 delete
+tag POSTMERGE_BNOBLE_6_20_96 delete
+tag EXPORTED_TO_CODA_11_25_96 delete
+tag BNOBLE_BP_12_05_96 delete
+tag BNOBLE_PREMERGE_12_05_96 delete
+tag BNOBLE_POSTMERGE_12_05_96 delete
+tag DAVIDE_BP_1_8_1997 delete
+tag SNAP_FOR_DAVIDE_1_8_1997 delete
+tag BNOBLE_BP_1_10_1997 delete
+tag BNOBLE_DEAD_1_10_1997 delete
+tag CMU1_2 delete
+tag BNOBLE_PRE_EP_UPDATE delete
+tag BUMBA_BP_6_25_97 delete
+tag CLDAVIS-EXPORT delete
+tag DAVIDE_4_15_1997 delete
+tag bp_DAVIDE_WORK_4_1_1997 delete
+tag bp_DAVIDE_WORK_7_1_1997 delete
+tag bp_DAVIDE_WORK_7_7_1997 delete
+tag E1_2A delete
+tag KWALKER_PRE_SETS delete
+tag KWALKER_POST_SETS delete
+tag ODYSSEY_CURRENT delete
+tag RVB1_2X delete
+tag bp_DAVIDE_WORK_7_22_1997 delete
+tag CMU/i0_0 delete
+tag RVB_BP_CFS delete
+tag bp_DAVIDE_WORK_1997_10_06 delete
+tag bp_DAVIDE_WORK_1997_11_10 delete
+tag WB delete
+tag k2_1_70/i1_1 delete         ;; linux kernel version
+tag k2_0/i1_0/v1_1 delete
+tag k2_0/i1_0/v1_2 delete
+tag k2_1/i1_1/v1_1 delete
+tag CMU/i1_0 delete
+tag k2_0/i1_0/v1_0 delete
+tag k2_0/i1_0/v1_3 delete
+tag k2_1_71/i1_1 delete         ;; linux kernel version
+tag FINAL delete
+tag R1_3 delete                 ;; netbsd kernel version?
+tag R2_2_5 delete               ;; freebsd kernel version?
+tag rvm4_4_1 delete
+tag BSD-Current delete
+tag WITH_SIMULATE delete
+tag WITHOUT_SIMULATE delete
+tag UMICH_CURRENT_SNAP delete
+tag UMICH_SNAP_1999_04_08 delete
+tag v0_01 delete                ;; solaris merge
+tag BNOBLE_BRANCH_1999_09_24 delete
+tag UMICH_SNAP_1999_09_24 delete
+tag v0_03 delete                ;; solaris merge
+tag coda_20020715 delete
+
+tag C401_9Jan1997_15h30m rename coda-4.0.1
+tag SIGCOMM_SUBMISSION+EP_UPDATE rename SIGCOMM_SUBMISSION
+tag SOSP_16_REPORTED rename SOSP_16
+tag C402 rename coda-4.0.2
+tag c4_1_0 rename coda-4.1.0
+tag c4_1_1 rename coda-4.1.1
+tag c4_0_8b rename coda-4.0.8b  ;; released after 4.1.1?
+tag c4_1_2 rename coda-4.1.2
+tag c4_1_3 rename coda-4.1.3
+tag c4_1_3b rename coda-4.1.3b
+tag c4_2_0 rename coda-4.2.0
+tag c4_2_1 rename coda-4.2.1
+tag c4_2_2 rename coda-4.2.2
+tag c4_2_4 rename coda-4.2.4
+tag c4_3_1 rename coda-4.3.1
+tag c4_3_2 rename coda-4.3.2
+tag c4_3_3 rename coda-4.3.3
+tag c4_3_4 rename coda-4.3.4
+tag c4_3_5 rename coda-4.3.5
+tag c4_3_6 rename coda-4.3.6
+tag c4_3_7 rename coda-4.3.7
+tag c4_3_8 rename coda-4.3.8
+tag c4_3_10 rename coda-4.3.10
+tag c4_3_11 rename coda-4.3.11
+tag c4_3_12 rename coda-4.3.12
+tag c4_3_13 rename coda-4.3.13
+tag c4_3_14 rename coda-4.3.14
+tag c4_4_3 rename coda-4.4.3    ;; strange, different branch from coda-4.4.0
+tag c4_4_0 rename coda-4.4.0
+tag c4_6_0 rename coda-4.6.0
+tag c4_6_0-10 rename coda-4.6.0-10 ;; stuff from to 4.6.x-stable merged here
+tag c4_6_1 rename coda-4.6.1
+tag c4_6_2 rename coda-4.6.2
+tag c4_6_3-2 rename coda-4.6.3-rc1
+tag c4_6_3 rename coda-4.6.3
+tag c4_6_4 rename coda-4.6.4-rc1
+tag c4_6_4final rename coda-4.6.4
+tag c4_6_5 rename coda-4.6.5
+tag c4_6_6 rename coda-4.6.6
+tag c4_6_7 rename coda-4.6.7
+tag c4_7_1 rename coda-4.7.1
+tag k4_7_0 delete               ;; not sure what this is, came after coda-4.7.1
+tag c4_7_2 rename coda-4.7.2
+tag c4_7_4 rename coda-4.7.4
+tag c4_7_5 rename coda-4.7.5
+tag c4_7_6 rename coda-4.7.6
+tag c4_7_7 rename coda-4.7.7
+tag c4_7_8 rename coda-4.7.8
+tag c5_0_p1 rename coda-5.0.0-rc1
+tag c5_0_0 rename coda-5.0.0
+tag c5_0_1 rename coda-5.0.1
+tag c5_0_2 rename coda-5.0.2
+tag c5_0_3 rename coda-5.0.3
+tag c5_1_1 rename coda-5.1.1
+tag c5_1_2 rename coda-5.1.2
+tag c5_2_0 rename coda-5.2.0
+tag c5_2_1 rename coda-5.2.1
+tag c5_2_2 rename coda-5.2.2
+tag c5_2_3 rename coda-5.2.3
+tag c5_2_4 rename coda-5.2.4
+tag c5_2_5 rename coda-5.2.5
+tag c5_2_6 rename coda-5.2.6
+tag c5_2_7 rename coda-5.2.7
+tag c5_3_0 rename coda-5.3.0
+tag c5_3_1 rename coda-5.3.1
+tag c5_3_2 rename coda-5.3.2
+tag c5_3_3 rename coda-5.3.3
+tag c5_3_4 rename coda-5.3.4
+tag c5_3_5 rename coda-5.3.5
+tag c5_3_6 rename coda-5.3.6
+tag c5_3_7 rename coda-5.3.7
+tag c5_3_7-2 rename coda-5.3.7-2
+tag c5_3_8 rename coda-5.3.8
+tag c5_3_9 rename coda-5.3.9
+tag c5_3_10 rename coda-5.3.10
+tag c5_3_11 rename coda-5.3.11
+tag c5_3_12 rename coda-5.3.12
+tag c5_3_13 rename coda-5.3.13
+tag c5_3_14 rename coda-5.3.14
+tag c5_3_15 rename coda-5.3.15
+tag c5_3_16 rename coda-5.3.16
+tag c5_3_17 rename coda-5.3.17
+tag c5_3_18 rename coda-5.3.18
+tag c5_3_18r2 rename coda-5.3.18-2
+tag c5_3_19 rename coda-5.3.19
+tag c5_3_20 rename coda-5.3.20
+tag c6_0_0 rename coda-6.0.0
+tag c6_0_1 rename coda-6.0.1
+tag c6_0_2 rename coda-6.0.2
+tag c6_0_3 rename coda-6.0.3
+tag c6_0_4 rename coda-6.0.4
+tag c6_0_5 rename coda-6.0.5
+tag c6_0_6 rename coda-6.0.6
+tag c6_0_7 rename coda-6.0.7
+tag c6_0_9 rename coda-6.0.9
+tag c6_0_10 rename coda-6.0.10
+tag c6_0_11 rename coda-6.0.11
+tag c6_0_12 rename coda-6.0.12
+tag c6_0_13 rename coda-6.0.13
+tag c6_0_15 rename coda-6.0.15
+tag c6_0_16 rename coda-6.0.16
+tag v6_1_0 rename coda-6.1.0
+tag v6_1_1 rename coda-6.1.1
+tag v6_1_2 rename coda-6.1.2
+tag v6_9_0 rename coda-6.9.0
+tag c6_9_1 rename coda-6.9.1
+tag v6_9_2 rename coda-6.9.2
+tag v6_9_3-rc1 rename coda-6.9.3-rc1
+tag v6_9_3 rename coda-6.9.3
+tag v6_9_4-rc3 rename coda-6.9.4-rc3
+tag v6_9_4-rc4 rename coda-6.9.4-rc4
+tag v6_9_4 rename coda-6.9.4
+tag v6_9_5 rename coda-6.9.5
+
+branch BNOBLE_WORK delete
+branch BNOBLE_WORK_1_21_96 delete
+branch RVB1_1 delete
+branch SATYA_WORK_8_8_96 delete
+branch BRAAM_WORK_8_13_96 delete
+branch BNOBLE_WORK_12_05_96 delete
+branch DAVIDE_WORK_1_8_1997 delete
+branch BNOBLE_WORK_1_10_1997 delete
+branch BUMBA_WORK_6_25_97 delete
+branch DAVIDE_WORK_4_1_1997 delete
+branch DAVIDE_WORK_7_1_1997 delete
+branch DAVIDE_WORK_7_7_1997 delete
+branch DAVIDE_WORK_7_22_1997 delete
+branch DAVIDE_WORK_1997_10_06 delete
+branch DAVIDE_WORK_1997_11_10 delete
+branch c4_1_3mach delete
+branch k2_0/i1_0 delete
+branch BNOBLE_WORK_1999_09_24 delete
+
+branch b4_2_0 rename coda-4.2.x
+branch c4_4B rename coda-4.4.x
+branch r4_6 rename coda-4.6.1-stable
+branch b4_6_4 rename coda-4.6.x
+branch b5_0 rename coda-5.0.x
+branch b5_2 delete
+branch v6_0_x rename coda-6.0.x
