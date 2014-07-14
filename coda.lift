@@ -214,6 +214,15 @@ branch DAVIDE_WORK_1997_11_10 delete
 branch c4_1_3mach delete
 branch k2_0/i1_0 delete
 branch BNOBLE_WORK_1999_09_24 delete
+branch b4_6_3 delete
+
+# remove branches which remove most of the repository files.
+# maybe not everything in the repo was tagged when they were created?
+# or can we still recover something useful from these?
+branch c4_0_8 delete
+branch WB-branch delete
+branch RVB_CFS delete
+branch RVB_CFS1_1 delete
 
 branch b4_2_0 rename coda-4.2.x
 branch c4_4B rename coda-4.4.x
@@ -222,3 +231,18 @@ branch b4_6_4 rename coda-4.6.x
 branch b5_0 rename coda-5.0.x
 branch b5_2 delete
 branch v6_0_x rename coda-6.0.x
+
+### squash commits that span several entries
+# First Checkin (pre-release)
+<1996-11-22T13:40:25Z!raiff@cs.cmu.edu>,\
+<1996-11-22T19:10:07Z!braam@cs.cmu.edu>,\
+<1996-11-22T19:15:07Z!braam@cs.cmu.edu> squash --coalesce
+#<1996-11-22T19:20:09Z!braam@cs.cmu.edu> squash
+# maria's changes, Nov 18.
+<1996-11-24T20:40:44Z!braam@cs.cmu.edu>..<1996-11-24T21:43:52Z!braam@cs.cmu.edu> squash --coalesce
+# dir.h to coda_dir.h
+<1996-12-05T01:14:32Z!braam@cs.cmu.edu>..<1996-12-05T05:10:26Z!braam@cs.cmu.edu> squash
+<1996-12-05T05:14:30Z!braam@cs.cmu.edu> squash --pushback
+# Modified alphaci to work on all supported platforms
+<1996-12-06T14:08:55Z!raiff@cs.cmu.edu> squash --coalesce
+<1996-12-06T14:23:25Z!raiff@cs.cmu.edu> squash --pushback --coalesce
