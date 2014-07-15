@@ -251,19 +251,32 @@ branch v6_0_x rename coda-6.0.x
 # Modified alphaci to work on all supported platforms
 <1996-12-06T14:08:55Z!raiff@cs.cmu.edu> squash --coalesce
 <1996-12-06T14:23:25Z!raiff@cs.cmu.edu> squash --pushback --coalesce
+# rpc2ping
+<1999-09-06T21:17:06Z!jaharkes@cs.cmu.edu>..<1999-09-07T04:00:43Z!jaharkes@cs.cmu.edu> squash --coalesce
+# rwcdb
+<2003-01-29T19:09:29Z!jaharkes@cs.cmu.edu> squash
 
 ## Merge branches
 # Lookaside branch merge
 <2003-02-04T22:06:26Z!jaharkes@cs.cmu.edu> squash
-<2003-02-28T17:09:40Z!jaharkes@cs.cmu.edu> squash --pushback
-<2003-03-07T05:48:49Z!jaharkes@cs.cmu.edu> squash --pushback
-<2003-02-27T14:32:13Z!jaharkes@cs.cmu.edu>,<2003-02-28T07:32:35Z!jaharkes@cs.cmu.edu> merge
+<2003-02-27T02:43:48Z!jaharkes@cs.cmu.edu> squash --pushback --coalesce
+<2003-02-27T14:27:57Z!jaharkes@cs.cmu.edu> squash --pushback --coalesce
+<2003-02-27T14:32:13Z!jaharkes@cs.cmu.edu> squash --pushback --coalesce
+<2003-02-28T17:09:40Z!jaharkes@cs.cmu.edu> squash --pushback --coalesce
+<2003-03-07T05:48:49Z!jaharkes@cs.cmu.edu> squash --pushback --coalesce
+<2003-02-24T18:35:17Z!jaharkes@cs.cmu.edu>,<2003-02-28T07:32:35Z!jaharkes@cs.cmu.edu> merge
+#branch coda_lka delete
 # realms branch merge
 <2002-07-15T22:19:43Z!jaharkes@cs.cmu.edu>,\
 <2002-07-15T22:19:44Z!jaharkes@cs.cmu.edu>,\
-<2002-07-23T05:01:02Z!jaharkes@cs.cmu.edu> squash
+<2002-07-23T05:01:02Z!jaharkes@cs.cmu.edu#1> squash
 <2003-01-08T17:20:57Z!jaharkes@cs.cmu.edu> squash --pushback
 <2002-12-09T20:28:38Z!jaharkes@cs.cmu.edu>,<2003-01-08T17:15:56Z!jaharkes@cs.cmu.edu> merge
+# coda-6.0.x branch merge
+#<2006-08-25T16:26:41Z!jaharkes@cs.cmu.edu>,\
+#<2006-08-25T19:05:18Z!jaharkes@cs.cmu.edu> squash
+#<2006-09-07T19:45:03Z!jaharkes@cs.cmu.edu>,<2006-08-25T21:14:31Z!jaharkes@cs.cmu.edu> merge
+
 
 
 ## switch to /coda/coda.cs.cmu.edu/project/coda/dev/coda.git history between
