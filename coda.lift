@@ -1,3 +1,9 @@
+#read <lwp.cvs
+#authors read <coda.map
+#1..<1999-09-24T02:25:31Z!phil@cs.wwu.edu> & =C delete --quiet
+#choose coda.cvs
+#<1999-10-22T14:13:21Z!jaharkes@cs.cmu.edu> graft lwp.cvs
+
 # delete disconnected and lost commit branches
 branch CMU_1 delete     ;; remove a branch with a secondary (disconnected) root
 branch master-UNNAMED-BRANCH-(null) delete ;; branch with 'lost' commits
@@ -22,6 +28,7 @@ branch BNOBLE_WORK_6_20_96 delete
 #tag BNOBLE_NTR_OUTPUT_1 delete
 #tag BNOBLE_2TERM_NTRREP delete
 1..<1996-11-13T04:14:20Z!bnoble@cs.cmu.edu> squash --coalesce
+
 
 # clean up tags
 tag g++_CONVERSION delete
@@ -242,7 +249,6 @@ branch v6_0_x rename coda-6.0.x
 <1996-11-22T13:40:25Z!raiff@cs.cmu.edu>,\
 <1996-11-22T19:10:07Z!braam@cs.cmu.edu>,\
 <1996-11-22T19:15:07Z!braam@cs.cmu.edu> squash --coalesce
-#<1996-11-22T19:20:09Z!braam@cs.cmu.edu> squash
 # maria's changes, Nov 18.
 <1996-11-24T20:40:44Z!braam@cs.cmu.edu>..<1996-11-24T21:43:52Z!braam@cs.cmu.edu> squash --coalesce
 # dir.h to coda_dir.h
@@ -251,12 +257,21 @@ branch v6_0_x rename coda-6.0.x
 # Modified alphaci to work on all supported platforms
 <1996-12-06T14:08:55Z!raiff@cs.cmu.edu> squash --coalesce
 <1996-12-06T14:23:25Z!raiff@cs.cmu.edu> squash --pushback --coalesce
+# collapse old runs of commits with identical commit messages
+1..<1998-06-18T16:07:36Z!jaharkes@cs.cmu.edu> coalesce 600
 # rpc2ping
 <1999-09-06T21:17:06Z!jaharkes@cs.cmu.edu>..<1999-09-07T04:00:43Z!jaharkes@cs.cmu.edu> squash --coalesce
 # rwcdb
 <2003-01-29T19:09:29Z!jaharkes@cs.cmu.edu> squash
 
 ## Merge branches
+# coda-5.0.x merges
+<1999-01-19T18:22:50Z!jaharkes@cs.cmu.edu> squash --coalesce
+<1999-01-19T18:32:02Z!jaharkes@cs.cmu.edu> squash --coalesce
+<1999-01-20T02:09:57Z!jaharkes@cs.cmu.edu>,<1999-01-20T02:14:24Z!jaharkes@cs.cmu.edu> merge
+<1999-01-20T19:32:30Z!rvb@cs.cmu.edu> squash
+<1999-01-21T01:17:35Z!rvb@cs.cmu.edu> squash
+<1999-01-21T19:56:10Z!jaharkes@cs.cmu.edu>,<1999-01-22T00:10:27Z!jaharkes@cs.cmu.edu> merge
 # Lookaside branch merge
 <2003-02-04T22:06:26Z!jaharkes@cs.cmu.edu> squash
 <2003-02-27T02:43:48Z!jaharkes@cs.cmu.edu> squash --pushback --coalesce
@@ -277,10 +292,9 @@ branch v6_0_x rename coda-6.0.x
 #<2006-08-25T19:05:18Z!jaharkes@cs.cmu.edu> squash
 #<2006-09-07T19:45:03Z!jaharkes@cs.cmu.edu>,<2006-08-25T21:14:31Z!jaharkes@cs.cmu.edu> merge
 
-
-
 ## switch to /coda/coda.cs.cmu.edu/project/coda/dev/coda.git history between
 #   <2005-07-06T21:15:06Z!jaharkes@cs.cmu.edu> Fixed function typing
 # and
 #   <2005-07-28T20:31:57Z!phil@cs.wwu.edu> Server names have changed for WWU
 
+lint
