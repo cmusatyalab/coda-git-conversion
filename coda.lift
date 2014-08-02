@@ -289,7 +289,6 @@ branch v6_0_x rename coda-6.0.x
 <2005-07-28T19:31:57Z!phil@cs.wwu.edu>..$ delete --quiet
 
 read coda-dev
-branch c4_0_7 delete
 branch refs/remotes/origin/master delete
 branch refs/remotes/origin/old/master delete
 branch refs/remotes/origin/jaharkes/pending delete
@@ -305,5 +304,6 @@ branch refs/remotes/origin/jaharkes/expand-wdonly-server rename expand-wdonly-se
 =C filter --regex /\<>/<nospam@coda.cs.cmu.edu>/
 unite coda.cvs coda-dev
 <2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu>,<2005-07-28T19:31:57Z!phil@cs.wwu.edu> reparent rebase
+branch c4_0_7 delete
 
 lint

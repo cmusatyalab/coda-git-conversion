@@ -1,0 +1,35 @@
+# squash everything up to the initial commit of standalone rvm tree
+1..<1999-11-02T16:41:57Z!jaharkes@cs.cmu.edu> squash --delete --quiet
+
+tag v1_0 rename rvm-1.0
+tag v1_1 rename rvm-1.1
+tag v1_2 rename rvm-1.2
+tag v1_3 rename rvm-1.3
+tag v1_4 rename rvm-1.4
+tag v1_6 rename rvm-1.6
+tag v1_7 rename rvm-1.7
+tag v1_8 rename rvm-1.8
+tag v1_9 rename rvm-1.9
+tag v1_10 rename rvm-1.10
+tag v1_11 rename rvm-1.11
+tag v1_12 rename rvm-1.12
+tag v1_13 rename rvm-1.13
+tag v1_14 rename rvm-1.14
+tag v1_15-rc1 rename rvm-1.15-rc1
+tag v1_15 rename rvm-1.15
+tag v1_16-rc1 rename rvm-1.16-rc1
+tag v1_16-rc2 rename rvm-1.16-rc2
+tag v1_16 rename rvm-1.16
+tag v1_17 rename rvm-1.17
+
+## switch to git://coda.cs.cmu.edu/project/coda/dev/rvm.git history
+<2006-05-27T15:58:52Z!jaharkes@cs.cmu.edu>..$ delete --quiet
+
+read rvm-dev
+branch refs/remotes/origin/master delete
+branch refs/remotes/origin/jaharkes/pending delete
+tag rvm-1.11 delete
+1..<2005-09-13T19:56:51Z!jaharkes@cs.cmu.edu> delete --quiet
+=C filter --regex /@cs.wwu>/@cs.wwu.edu>/
+unite rvm.cvs rvm-dev
+<2005-09-13T19:56:50Z!jaharkes@cs.cmu.edu>,<2005-12-07T18:19:58Z!jaharkes@cs.cmu.edu> reparent rebase
