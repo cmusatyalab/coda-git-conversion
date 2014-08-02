@@ -1,0 +1,3 @@
+# merge lwp and coda commit histories
+#<1999-10-27T00:08:21Z!jaharkes@cs.cmu.edu>,<1999-10-28T19:38:40Z!jaharkes@cs.cmu.edu> reparent rebase
+#<1999-12-06T21:30:59Z!jaharkes@cs.cmu.edu>,<1999-12-07T01:04:22Z!jaharkes@cs.cmu.edu> reparent rebase
