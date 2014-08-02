@@ -73,3 +73,20 @@ print fix up merge points where branches got merged
 print fix up branches
 branch BNOBLE_WORK_2000_01_15 delete
 
+## switch to git://coda.cs.cmu.edu/project/coda/dev/rpc2.git history
+<2005-08-19T17:19:16Z!jaharkes@cs.cmu.edu>..$ delete --quiet
+
+read rpc2-dev
+branch refs/remotes/origin/master delete
+branch refs/remotes/origin/jaharkes/pending delete
+branch refs/remotes/origin/jaharkes/rtt rename lua_timevals
+branch refs/remotes/origin/jaharkes/icmp icmp_errors
+branch refs/remotes/origin/jaharkes/new_rpc_h delete
+branch refs/remotes/origin/pin/secure_rpc delete
+tag rpc2-1.27 delete
+#1..<2005-08-03T19:40:09Z!jaharkes@cs.cmu.edu> delete --quiet
+=C filter --regex /@cs.wwu>/@cs.wwu.edu>/
+=C filter --regex /agoode@andrew.cmu>/agoode@andrew.cmu.edu>/
+=C filter --regex /adam@hallmags.localdomain>/agoode@andrew.cmu.edu>/
+unite rpc2.cvs rpc2-dev
+<2005-06-26T17:36:11Z!jaharkes@cs.cmu.edu>,<2005-08-19T17:16:35Z!jaharkes@cs.cmu.edu> reparent rebase
