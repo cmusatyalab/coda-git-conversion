@@ -1,9 +1,3 @@
-#read <lwp.cvs
-#authors read <coda.map
-#1..<1999-09-24T02:25:31Z!phil@cs.wwu.edu> & =C delete --quiet
-#choose coda.cvs
-#<1999-10-22T14:13:21Z!jaharkes@cs.cmu.edu> graft lwp.cvs
-
 # delete disconnected and lost commit branches
 branch CMU_1 delete     ;; remove a branch with a secondary (disconnected) root
 branch master-UNNAMED-BRANCH-(null) delete ;; branch with 'lost' commits
@@ -66,19 +60,19 @@ tag KWALKER_POST_SETS delete
 tag ODYSSEY_CURRENT delete
 tag RVB1_2X delete
 tag bp_DAVIDE_WORK_7_22_1997 delete
-tag CMU/i0_0 delete
+tag refs/tags/CMU/i0_0 delete
 tag RVB_BP_CFS delete
 tag bp_DAVIDE_WORK_1997_10_06 delete
 tag bp_DAVIDE_WORK_1997_11_10 delete
 tag WB delete
-tag k2_1_70/i1_1 delete         ;; linux kernel version
-tag k2_0/i1_0/v1_1 delete
-tag k2_0/i1_0/v1_2 delete
-tag k2_1/i1_1/v1_1 delete
-tag CMU/i1_0 delete
-tag k2_0/i1_0/v1_0 delete
-tag k2_0/i1_0/v1_3 delete
-tag k2_1_71/i1_1 delete         ;; linux kernel version
+tag refs/tags/k2_1_70/i1_1 delete         ;; linux kernel version
+tag refs/tags/k2_0/i1_0/v1_1 delete
+tag refs/tags/k2_0/i1_0/v1_2 delete
+tag refs/tags/k2_1/i1_1/v1_1 delete
+tag refs/tags/CMU/i1_0 delete
+tag refs/tags/k2_0/i1_0/v1_0 delete
+tag refs/tags/k2_0/i1_0/v1_3 delete
+tag refs/tags/k2_1_71/i1_1 delete         ;; linux kernel version
 tag FINAL delete
 tag R1_3 delete                 ;; netbsd kernel version?
 tag R2_2_5 delete               ;; freebsd kernel version?
@@ -224,7 +218,6 @@ branch DAVIDE_WORK_7_22_1997 delete
 branch DAVIDE_WORK_1997_10_06 delete
 branch DAVIDE_WORK_1997_11_10 delete
 branch c4_1_3mach delete
-branch k2_0/i1_0 delete
 branch BNOBLE_WORK_1999_09_24 delete
 branch b4_6_3 delete
 
@@ -292,9 +285,25 @@ branch v6_0_x rename coda-6.0.x
 #<2006-08-25T19:05:18Z!jaharkes@cs.cmu.edu> squash
 #<2006-09-07T19:45:03Z!jaharkes@cs.cmu.edu>,<2006-08-25T21:14:31Z!jaharkes@cs.cmu.edu> merge
 
-## switch to /coda/coda.cs.cmu.edu/project/coda/dev/coda.git history between
-#   <2005-07-06T21:15:06Z!jaharkes@cs.cmu.edu> Fixed function typing
-# and
-#   <2005-07-28T20:31:57Z!phil@cs.wwu.edu> Server names have changed for WWU
+## switch to git://coda.cs.cmu.edu/project/coda/dev/coda.git history
+<2005-07-28T19:31:57Z!phil@cs.wwu.edu>..$ delete --quiet
+
+read coda-dev
+branch c4_0_7 delete
+branch refs/remotes/origin/master delete
+branch refs/remotes/origin/old/master delete
+branch refs/remotes/origin/jaharkes/pending delete
+branch refs/remotes/origin/jaharkes/libkernel rename libkernel
+branch refs/remotes/origin/jaharkes/expand-wdonly-server rename expand-wdonly-server
+1..<2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu> delete --quiet
+=C filter --regex /jaharkes@delft.\(none\)>/jaharkes@cs.cmu.edu>/
+=C filter --regex /jaharkes@freebsd.local>/jaharkes@cs.cmu.edu>/
+=C filter --regex /@chalmers>/@chalmers.se>/
+=C filter --regex /@cs.wwu>/@cs.wwu.edu>/
+=C filter --regex /@gmail>/@gmail.com>/
+=C filter --regex /@pbs>/@pbs.com>/
+=C filter --regex /\<>/<nospam@coda.cs.cmu.edu>/
+unite coda.cvs coda-dev
+<2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu>,<2005-07-28T19:31:57Z!phil@cs.wwu.edu> reparent rebase
 
 lint

@@ -159,3 +159,5 @@ branch b5_2 rename coda-5.2.x
 branch BNOBLE_WORK_1999_09_24 delete
 branch BNOBLE_WORK_2000_01_15 delete
 
+<1999-10-26T17:35:45Z!jaharkes@cs.cmu.edu> filter --replace /chanking/check in/
+

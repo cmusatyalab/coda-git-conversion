@@ -16,3 +16,9 @@ echo "Fixing up broken CVS tags"
 find coda-mirror/coda/utils-src/mond -name \*,v \
     -exec sed -i 's/(SOSP15_CDROM)/_SOSP15-CDROM/' {} \;
 
+echo "Cloning Coda development git repositories"
+git clone git://coda.cs.cmu.edu/project/coda/dev/coda.git coda-dev
+git clone git://coda.cs.cmu.edu/project/coda/dev/lwp.git lwp-dev
+git clone git://coda.cs.cmu.edu/project/coda/dev/rpc2.git rpc2-dev
+git clone git://coda.cs.cmu.edu/project/coda/dev/rvm.git rvm-dev
+
