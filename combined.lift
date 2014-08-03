@@ -1,3 +1,25 @@
+read lwp-git
+rename lwp
+paths sub lib-src/lwp
+branch master-lwp.cvs delete
+
+read rpc2-git
+rename rpc2
+paths sub lib-src/rpc2
+branch master-rpc2.cvs delete
+
+read rvm-git
+rename rvm
+paths sub lib-src/rvm
+branch master-rvm.cvs delete
+
+read coda-git
+rename coda
+branch master-coda.cvs delete
+
+unite lwp rpc2 rvm coda
+rename combined
+
 # merge lwp and coda commit histories
-#<1999-10-27T00:08:21Z!jaharkes@cs.cmu.edu>,<1999-10-28T19:38:40Z!jaharkes@cs.cmu.edu> reparent rebase
+#<1999-10-27T00:08:21Z!jaharkes@cs.cmu.edu>,<1999-10-28T19:38:40Z!jaharkes@cs.cmu.edu> reparent
 #<1999-12-06T21:30:59Z!jaharkes@cs.cmu.edu>,<1999-12-07T01:04:22Z!jaharkes@cs.cmu.edu> reparent rebase

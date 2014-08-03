@@ -22,3 +22,10 @@ echo "Cloning Coda development git repositories"
 [ -e rpc2-dev ] || git clone git://coda.cs.cmu.edu/project/coda/dev/rpc2.git rpc2-dev
 [ -e rvm-dev ] || git clone git://coda.cs.cmu.edu/project/coda/dev/rvm.git rvm-dev
 
+echo "Removing submodule links"
+# reposurgeon doesn't seem to really handle them except for warning about them
+# and they are broken after the rewrite anyway.
+( cd coda-dev ; git log -p -- lib-src/lwp lib-src/rpc2 lib-src/rvm ) > coda-dev-submodules
+( cd coda-dev ; git filter-branch --index-filter 'git rm --cached --ignore-unmatch .gitmodules lib-src/lwp lib-src/rpc2 lib-src/rvm' --tag-name-filter 'cat' --prune-empty -- --all )
+rm -r coda-dev/.git/refs/original
+
