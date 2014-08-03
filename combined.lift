@@ -3,6 +3,13 @@ rename lwp
 paths sub lib-src/lwp
 branch master-lwp.cvs delete
 
+#<1999-12-06T21:22:42Z!jaharkes@cs.cmu.edu> divide
+#<1999-12-07T01:04:22Z!jaharkes@cs.cmu.edu> divide
+#choose lwp-early
+#rename lwp-pre1.0
+#choose lwp-late
+#rename lwp-1.0
+
 read rpc2-git
 rename rpc2
 paths sub lib-src/rpc2
@@ -17,9 +24,37 @@ read coda-git
 rename coda
 branch master-coda.cvs delete
 
-unite lwp rpc2 rvm coda
+# merge commit histories
+define zipto {
+choose {0}
+<{1}> divide
+choose {0}-early
+rename {0}
+unite combined {0}
+rename combined
+choose {0}-late
+rename {0}
+}
+
+# prepare for merging
+<1999-10-22T14:13:21Z> divide
+choose coda-late
+rename coda
+choose coda-early
 rename combined
 
-# merge lwp and coda commit histories
-#<1999-10-27T00:08:21Z!jaharkes@cs.cmu.edu>,<1999-10-28T19:38:40Z!jaharkes@cs.cmu.edu> reparent
-#<1999-12-06T21:30:59Z!jaharkes@cs.cmu.edu>,<1999-12-07T01:04:22Z!jaharkes@cs.cmu.edu> reparent rebase
+# 'zipper merge' branches
+do zipto lwp 1999-10-27T00:08:21Z
+#do zipto coda 1999-10-28T19:57:31Z
+#do zipto lwp 1999-10-28T20:14:53Z
+#do zipto coda 1999-11-06T00:06:40Z
+#do zipto lwp 1999-11-08T16:01:36Z
+#do zipto coda 1999-11-10T20:44:38Z
+# lwp 1999-11-11T19:17:47
+# rvm 1999-11-15T22:54:47
+# coda 1999-11-19T18:59:12
+# rpc2 1999-12-23T02:50:03
+
+# collect loose ends
+unite combined coda lwp rpc2 rvm
+#unite combined coda
