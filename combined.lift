@@ -37,14 +37,14 @@ rename {0}
 }
 
 # prepare for merging
-<1999-10-22T14:13:21Z> divide
-choose coda-late
-rename coda
-choose coda-early
-rename combined
+#<1999-10-22T14:13:21Z> divide
+#choose coda-late
+#rename coda
+#choose coda-early
+#rename combined
 
 # 'zipper merge' branches
-do zipto lwp 1999-10-27T00:08:21Z
+#do zipto lwp 1999-10-27T00:08:21Z
 #do zipto coda 1999-10-28T19:57:31Z
 #do zipto lwp 1999-10-28T20:14:53Z
 #do zipto coda 1999-11-06T00:06:40Z
@@ -56,5 +56,8 @@ do zipto lwp 1999-10-27T00:08:21Z
 # rpc2 1999-12-23T02:50:03
 
 # collect loose ends
-unite combined coda lwp rpc2 rvm
+unite coda lwp rpc2 rvm
 #unite combined coda
+
+branch master rename master-rpc2
+branch master-coda rename master

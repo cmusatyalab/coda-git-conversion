@@ -26,6 +26,6 @@ echo "Removing submodule links"
 # reposurgeon doesn't seem to really handle them except for warning about them
 # and they are broken after the rewrite anyway.
 ( cd coda-dev ; git log -p -- lib-src/lwp lib-src/rpc2 lib-src/rvm ) > coda-dev-submodules
-( cd coda-dev ; git filter-branch --index-filter 'git rm --cached --ignore-unmatch .gitmodules lib-src/lwp lib-src/rpc2 lib-src/rvm' --tag-name-filter 'cat' --prune-empty -- --all )
+( cd coda-dev ; git filter-branch --index-filter 'git rm --cached --ignore-unmatch .gitmodules lib-src/lwp lib-src/rpc2 lib-src/rvm' --tag-name-filter 'cat' -- --all )
 rm -r coda-dev/.git/refs/original
 
