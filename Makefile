@@ -48,21 +48,21 @@ recombined.fi: combined-git
 final.fi: recombined.fi merge.lift
 	reposurgeon "verbose 1" "prefer git" \
 		    "read <recombined.fi" "script merge.lift" \
-		    "fossils write >combined.fo" "write >combined.fi"
+		    "fossils write >final.fo" "write >final.fi"
 
 %-git: %.fi
-	$(RM) -rf $@
+	$(RM) -r $@
 	reposurgeon "read <$<" "prefer git" "rebuild $@"
 
 #
 # Clean up
 #
 distclean: clean
-	$(RM) -rf ${SRCREPOS}
+	$(RM) -r ${SRCREPOS}
 	$(RM) coda-dev.submodules
 
 clean:
-	$(RM) -rf ${DSTREPOS} combined-git final-git
+	$(RM) -r ${DSTREPOS} combined-git final-git
 	$(RM) *.fi *.fo
 	rmdir *~
 
