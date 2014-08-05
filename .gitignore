@@ -1,7 +1,12 @@
 coda-mirror-*.tar.gz
 coda-mirror/
+coda-dev/
+lwp-dev/
+rpc2-dev/
+rvm-dev/
+coda-dev.submodules
 *.cvs
 *.fi
 *.fo
 *-git
-*-git.~1~
+*~/

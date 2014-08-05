@@ -16,14 +16,14 @@ if [ ! -d combined-git ] ; then
       "unite coda lwp rpc2 rvm" \
       "branch master rename master-rpc2" \
       "branch master-coda rename master" \
+      "<1999-12-03T21:39:52Z#1> timeoffset -1" \
       "fossils write >combined.fo" "write >combined.fi"
 
     rm -fr combined-git
     reposurgeon "read <combined.fi" "prefer git" "rebuild combined-git"
 fi
 
-git --git-dir=combined-git/.git fast-export --signed-tags=strip --date-order --all \
-    > recombined.fi
+git --git-dir=combined-git/.git fast-export --signed-tags=strip --date-order --all > recombined.fi
 
 reposurgeon "verbose 1" "prefer git" \
   "read <recombined.fi" \
