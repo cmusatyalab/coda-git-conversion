@@ -80,7 +80,7 @@ read rpc2-dev
 branch refs/remotes/origin/master delete
 branch refs/remotes/origin/jaharkes/pending delete
 branch refs/remotes/origin/jaharkes/rtt rename lua_timevals
-branch refs/remotes/origin/jaharkes/icmp icmp_errors
+branch refs/remotes/origin/jaharkes/icmp rename icmp_errors
 branch refs/remotes/origin/jaharkes/new_rpc_h delete
 branch refs/remotes/origin/pin/secure_rpc delete
 tag rpc2-1.27 delete

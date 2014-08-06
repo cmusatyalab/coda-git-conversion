@@ -1,4 +1,8 @@
 # last couple of fix ups
 
-# fix up branch mergepoints that got lost during the big merge
+coalesce 7200
+
+# fix up branch mergepoints that got lost during the big zipper merge
+
+<2003-06-18T21:36:16Z>,<2003-06-20T17:40:14Z> merge
 

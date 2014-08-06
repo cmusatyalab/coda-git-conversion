@@ -38,6 +38,8 @@ coda-dev:
 	$(RM) $*.fi
 	$(RM) -r $@
 	$(MAKE) -f Makefile.$* $@
+	# cannot safely delete branches with reposurgeon so we do it with git
+	git --git-dir=$*-git/.git branch -d master-$*.cvs
 
 lwp-git: lwp-dev
 rpc2-git: rpc2-dev
@@ -49,38 +51,29 @@ combined-git: ${DSTREPOS} combined.lift
 		    "fossils write >combined.fo" "write >combined.fi"
 	reposurgeon "read <combined.fi" "prefer git" "rebuild combined-git"
 
-recombined.fi: combined-git
-	git --git-dir=combined-git/.git fast-export --signed-tags=strip \
-	    --date-order --all > recombined.fi
-
-merge.lift: ${DSTREPOS} merge.sh Makefile
+merge.lift: ${DSTREPOS} merge.sh
 	sh merge.sh > merge.lift
-	sed -i 's/\(1999-12-28T19:51:23Z\)/\1!jaharkes@cs.cmu.edu/' merge.lift
-	#sed -i 's/^<2006-05-26T18:30:11Z#2>/:22443/' merge.lift
-	#sed -i 's/^<2006-07-26T18:42:41Z#5>/:22556/' merge.lift
-	#sed -i 's/^<2006-07-26T18:52:26Z#3>/:22564/' merge.lift
-	#sed -i 's/^<2006-11-02T19:41:08Z#10>/:23669/' merge.lift
-	#sed -i 's/^<2007-06-26T18:19:58Z#2>/:23921/' merge.lift
-	#sed -i 's/^<2007-08-01T18:30:51Z#6>/:24276/' merge.lift
-	#sed -i 's/^<2007-12-10T18:31:51Z#6>/:24508/' merge.lift
-	#sed -i 's/^<2008-08-08T15:35:46Z#3>/:25084/' merge.lift
-	#sed -i 's/^<2012-02-10T14:58:12Z#5>/:25683/' merge.lift
 
-final-git: recombined.fi merge.lift final.lift Makefile
+recombined-git: combined-git merge.lift
+	$(RM) -r recombined-git
+	git --git-dir=combined-git/.git fast-export --signed-tags=strip \
+	    --date-order --all > dateordered.fi
+	reposurgeon "verbose 1" "prefer git" \
+		    "read <dateordered.fi" "script merge.lift" \
+		    "fossils write >recombined.fo" "write >recombined.fi"
+	reposurgeon "read <recombined.fi" "prefer git" "rebuild recombined-git"
+
+final-git: recombined-git final.lift
 	$(RM) -r final-git
 	reposurgeon "verbose 1" "prefer git" \
-		    "read <recombined.fi" "script merge.lift" "script final.lift" \
+		    "read recombined-git" "script final.lift" \
 		    "fossils write >final.fo" "write >final.fi"
 	reposurgeon "read <final.fi" "prefer git" "rebuild final-git"
-
-	# cannot safely delete merged branches with reposurgeon so we do it with git here
-	git --git-dir=final-git/.git branch -d master-coda.cvs
-	git --git-dir=final-git/.git branch -d master-lwp.cvs
+	# cannot safely delete merged branches with reposurgeon so we do it with git
 	git --git-dir=final-git/.git branch -d master-lwp
-	git --git-dir=final-git/.git branch -d master-rpc2.cvs
 	git --git-dir=final-git/.git branch -d master-rpc2
-	git --git-dir=final-git/.git branch -d master-rvm.cvs
 	git --git-dir=final-git/.git branch -d master-rvm
+	git --git-dir=final-git/.git repack -AdF --window=1250 --depth=250
 
 #
 # Clean up
