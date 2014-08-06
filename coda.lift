@@ -312,4 +312,7 @@ branch c4_0_7 delete
 # fix up non-utf8 commit message
 <2001-04-09T21:02:54Z!jaharkes@cs.cmu.edu> transcode latin-1
 
+# fix up colliding commit timestamp
+<1999-12-03T21:39:52Z> timeoffset -1
+
 lint

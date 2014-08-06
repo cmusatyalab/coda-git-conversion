@@ -1,26 +1,22 @@
 read lwp-git
 rename lwp
 paths sub lib-src/lwp
-branch master-lwp.cvs delete
 
 read rpc2-git
 rename rpc2
 paths sub lib-src/rpc2
-branch master-rpc2.cvs delete
 
 read rvm-git
 rename rvm
 paths sub lib-src/rvm
-branch master-rvm.cvs delete
 
 read coda-git
 rename coda
-branch master-coda.cvs delete
 
 unite coda lwp rpc2 rvm
 
 branch master rename master-rpc2
 branch master-coda rename master
 
-<1999-12-03T21:39:52Z#1> timeoffset -1
+lint
 
