@@ -5,6 +5,7 @@ lwp-dev/
 rpc2-dev/
 rvm-dev/
 coda-dev.submodules
+merge.lift
 *.cvs
 *.fi
 *.fo
