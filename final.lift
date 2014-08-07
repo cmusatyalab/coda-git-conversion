@@ -3,6 +3,35 @@
 coalesce 7200
 
 # fix up branch mergepoints that got lost during the big zipper merge
-
 <2003-06-18T21:36:16Z>,<2003-06-20T17:40:14Z> merge
+
+# fix branches that were rebased before pushing to CVS
+#echo 1
+#<2010-04-23T01:21:45Z>,<2012-02-10T14:57:20Z> reparent
+#<2012-02-10T14:57:20Z>,<2012-02-10T15:38:38Z#17> reparent
+
+## old venus patch
+# right
+#<2010-03-17T20:58:43Z>,<2012-02-10T15:38:38Z> reparent rebase
+#<2012-02-10T15:38:37Z>,<2012-02-10T15:38:38Z#17> merge
+
+## coda
+# right
+#<2010-03-29T19:10:32Z>,<2012-02-10T15:38:37Z> reparent rebase
+#<2012-02-10T15:38:37Z>,<2012-02-10T15:38:38Z#17> merge
+
+## rpc2 AES selftests and rvm
+# right
+#<2010-03-29T19:10:32Z>,<2012-02-10T14:58:12Z#1> reparent rebase
+#<2012-02-10T15:01:11Z>,<2012-02-10T15:38:38Z#17> merge
+
+## lwp fortify fixes
+# right
+#<2010-03-29T19:10:32Z>,<2012-02-10T14:47:28Z> reparent rebase
+#<2012-02-10T14:47:29Z>,<2012-02-10T14:57:20Z> merge
+
+# reorganization/cleanup for the socket listener
+<2006-03-23T16:18:05Z>,<2006-03-23T16:22:43Z> reparent
+<2006-01-23T20:49:56Z>,<2006-03-23T16:18:30Z> reparent rebase
+<2006-03-23T16:18:30Z>,<2006-03-23T16:22:43Z> merge
 

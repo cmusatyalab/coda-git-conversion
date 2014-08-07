@@ -54,19 +54,19 @@ combined-git: ${DSTREPOS} combined.lift
 merge.lift: ${DSTREPOS} merge.sh
 	sh merge.sh > merge.lift
 
-recombined-git: combined-git merge.lift
+recombined.fi: combined-git merge.lift
 	$(RM) -r recombined-git
 	git --git-dir=combined-git/.git fast-export --signed-tags=strip \
 	    --date-order --all > dateordered.fi
 	reposurgeon "verbose 1" "prefer git" \
 		    "read <dateordered.fi" "script merge.lift" \
 		    "fossils write >recombined.fo" "write >recombined.fi"
-	reposurgeon "read <recombined.fi" "prefer git" "rebuild recombined-git"
+	#reposurgeon "read <recombined.fi" "prefer git" "rebuild recombined-git"
 
-final-git: recombined-git final.lift
+final-git: recombined.fi final.lift
 	$(RM) -r final-git
 	reposurgeon "verbose 1" "prefer git" \
-		    "read recombined-git" "script final.lift" \
+		    "read <recombined.fi" "script final.lift" \
 		    "fossils write >final.fo" "write >final.fi"
 	reposurgeon "read <final.fi" "prefer git" "rebuild final-git"
 	# cannot safely delete merged branches with reposurgeon so we do it with git
