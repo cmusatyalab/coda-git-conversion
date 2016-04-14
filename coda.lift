@@ -304,9 +304,14 @@ branch refs/remotes/origin/jaharkes/expand-wdonly-server rename expand-wdonly-se
 =C filter --regex /@pbs>/@pbs.com>/
 =C filter --regex /\<>/<nospam@coda.cs.cmu.edu>/
 
-1..<2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu> delete --quiet
+#1..<2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu> delete --quiet
+<2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu> divide
+choose coda-dev-late
+rename coda-dev
+drop coda-dev-early
+
 unite coda.cvs coda-dev
-<2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu>,<2005-07-28T19:31:57Z!phil@cs.wwu.edu> reparent rebase
+#<2005-07-06T20:15:06Z!jaharkes@cs.cmu.edu>,<2005-07-28T19:31:57Z!phil@cs.wwu.edu> reparent rebase
 branch c4_0_7 delete
 
 # fix up non-utf8 commit message
