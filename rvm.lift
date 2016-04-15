@@ -1,5 +1,74 @@
 # squash everything up to the initial commit of standalone rvm tree
-1..<1999-11-02T16:41:57Z!jaharkes@cs.cmu.edu> squash --delete --quiet
+#1..<1999-11-02T16:41:57Z!jaharkes@cs.cmu.edu> squash --delete --quiet
+#
+# get rid of tags and branches on a disconnected root
+branch master-UNNAMED-BRANCH-(null) delete
+branch b5_0 delete
+branch b4_6_4 delete
+branch r4_6 delete
+branch c4_4B delete
+tag c5_3_3 delete
+tag c5_3_2 delete
+tag c5_3_1 delete
+tag c5_3_0 delete
+tag c5_2_7 delete
+tag c5_2_6 delete
+tag c5_2_5 delete
+tag c5_2_4 delete
+tag c5_2_3 delete
+tag c5_2_2 delete
+tag c5_2_1 delete
+tag c5_2_0 delete
+tag c5_1_2 delete
+tag c5_1_1 delete
+tag c5_0_0 delete
+tag c5_0_p1 delete
+tag c4_7_8 delete
+tag GPL delete
+tag c4_7_7 delete
+tag c4_7_6 delete
+tag c4_7_5 delete
+tag c4_7_4 delete
+tag WITHOUT_SIMULATE delete
+tag WITH_SIMULATE delete
+tag c4_7_1 delete
+tag c4_6_5 delete
+tag c4_6_4final delete
+tag c4_6_4 delete
+tag c4_6_3-2 delete
+tag c4_6_3 delete
+tag c4_6_2 delete
+tag c4_6_1 delete
+tag c4_6_0-10 delete
+tag c4_6_0 delete
+tag rvm4_4_1 delete
+tag c4_3_14 delete
+tag c4_3_13 delete
+tag c4_3_12 delete
+tag c4_3_11 delete
+tag c4_3_10 delete
+tag c4_3_8 delete
+tag c4_3_7 delete
+tag c4_3_6 delete
+tag c4_3_5 delete
+tag c4_3_4 delete
+tag c4_3_3 delete
+tag c4_3_2 delete
+tag c4_3_1 delete
+tag c4_2_4 delete
+tag c4_2_2 delete
+tag c4_2_1 delete
+tag c4_2_0 delete
+tag c4_1_3b delete
+tag c4_1_3 delete
+tag WB delete
+tag c4_0_8b delete
+tag c4_1_2 delete
+tag c4_1_1 delete
+tag c4_1_0 delete
+tag C402 delete
+tag C401_9Jan1997_15h30m delete
+
 
 tag v1_0 rename rvm-1.0
 tag v1_1 rename rvm-1.1
@@ -29,7 +98,7 @@ read rvm-dev
 branch refs/remotes/origin/master delete
 branch refs/remotes/origin/jaharkes/pending delete
 tag rvm-1.11 delete
-1..<2005-09-13T19:56:51Z!jaharkes@cs.cmu.edu> delete --quiet
+1..<2005-09-13T19:56:51Z!jaharkes@cs.cmu.edu> squash --coalesce
 =C filter --regex /@cs.wwu>/@cs.wwu.edu>/
 unite rvm.cvs rvm-dev
 <2005-09-13T19:56:50Z!jaharkes@cs.cmu.edu>,<2005-12-07T18:19:58Z!jaharkes@cs.cmu.edu> reparent rebase

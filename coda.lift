@@ -21,7 +21,8 @@ branch BNOBLE_WORK_6_20_96 delete
 #tag BNOBLE_ALPHA_6_19_96 delete ;; these tags got deleted with branches
 #tag BNOBLE_NTR_OUTPUT_1 delete
 #tag BNOBLE_2TERM_NTRREP delete
-1..<1996-11-13T04:14:20Z!bnoble@cs.cmu.edu> squash --coalesce
+#1..<1996-11-13T04:14:20Z!bnoble@cs.cmu.edu> squash --coalesce
+#1..<1996-11-22T19:15:07Z!braam@cs.cmu.edu> squash --coalesce
 
 
 # clean up tags

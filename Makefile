@@ -5,6 +5,7 @@ CVSREPOSHA1=5b70fc1f21c2f1f447d747437026abb2bb2f67d9
 SRCREPOS=coda-mirror coda-dev lwp-dev rpc2-dev rvm-dev
 DSTREPOS=coda-git lwp-git rpc2-git rvm-git
 
+
 all: ${DSTREPOS} final-git
 
 #
@@ -34,12 +35,13 @@ coda-dev:
 	$(MAKE) -f Makefile.$* local-clobber $@
 	touch $@
 
-%-git: %.cvs %-dev %.lift
+%-git: %.cvs %-dev %.lift %.grafts
 	$(RM) $*.fi
 	$(RM) -r $@
 	$(MAKE) -f Makefile.$* $@
+	cp $*.grafts $*-git/.git/info/grafts
 	# cannot safely delete branches with reposurgeon so we do it with git
-	git --git-dir=$*-git/.git branch -d master-$*.cvs
+	-git --git-dir=$*-git/.git branch -d master-$*.cvs
 
 lwp-git: lwp-dev
 rpc2-git: rpc2-dev
