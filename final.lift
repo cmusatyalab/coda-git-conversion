@@ -35,3 +35,6 @@ coalesce 7200
 <2006-01-23T20:49:56Z>,<2006-03-23T16:18:30Z> reparent rebase
 <2006-03-23T16:18:30Z>,<2006-03-23T16:22:43Z> merge
 
+# tags that don't check out anything useful from CVS
+tag SOSP_16 delete
+tag SIGCOMM_SUBMISSION delete
